@@ -116,6 +116,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .form button{border:0;border-radius:8px;background:var(--navy);color:#fff;font:inherit;font-weight:600;font-size:15px;padding:14px;cursor:pointer}
 .form button:hover{background:#23688C}
 .form small{color:var(--grey);font-size:12px}
+.form .files{display:grid;gap:8px}
+.form .flabel{font-size:13px;font-weight:500;color:#3b475a}
+.form input[type=file]{padding:9px;font-size:14px;background:#f6f8fb;border-style:dashed}
+.form .ferr{color:#b3261e;font-weight:500}
 .thanks{display:none;background:#EAF7F0;border:1px solid #9FD9B8;color:#1E5A3A;border-radius:10px;padding:16px 18px;font-size:15px}
 .thanks.show{display:block}
 .diag li:before{content:"✓";color:#A9F0CF;font-weight:700;margin-right:10px}
@@ -314,7 +318,7 @@ body.fr [data-en],body.de [data-en]{display:none}
             <li><span data-en>Fans, controls, energy use</span><span data-fr>Ventilateurs, régulation, consommation</span><span data-de>Ventilatoren, Regelung, Verbrauch</span></li>
           </ul>
         </div>
-        <form class="form" action="https://formsubmit.co/info@nordic-vent.ch" method="POST">
+        <form class="form" id="diagform" action="https://formsubmit.co/807d2eefc873db2196357fde5cb10d32" method="POST" enctype="multipart/form-data">
           <h4><span data-en>Book your free diagnosis</span><span data-fr>Réservez votre diagnostic gratuit</span><span data-de>Kostenlose Diagnose buchen</span></h4>
           <div class="thanks" id="thanks"><span data-en>Thank you! We will contact you shortly to book a visit.</span><span data-fr>Merci ! Nous vous contactons rapidement pour fixer la visite.</span><span data-de>Danke! Wir melden uns rasch, um den Besuch zu vereinbaren.</span></div>
           <input type="hidden" name="_subject" value="Nordic Vent – Demande de diagnostic gratuit">
@@ -342,6 +346,14 @@ body.fr [data-en],body.de [data-en]{display:none}
             </label>
           </div>
           <label><span><span data-en>Message (optional)</span><span data-fr>Message (facultatif)</span><span data-de>Nachricht (optional)</span></span><textarea name="Message" rows="3"></textarea></label>
+          <div class="files">
+            <span class="flabel"><span data-en>Photos or files (optional)</span><span data-fr>Photos ou fichiers (facultatif)</span><span data-de>Fotos oder Dateien (optional)</span></span>
+            <input type="file" name="Fichier_1" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf">
+            <input type="file" name="Fichier_2" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf" hidden>
+            <input type="file" name="Fichier_3" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf" hidden>
+            <small><span data-en>E.g. photos of the unit, filters or drawings. Up to 3 files, 10 MB in total.</span><span data-fr>P. ex. photos de l'installation, des filtres ou plans. Jusqu'à 3 fichiers, 10 Mo au total.</span><span data-de>Z. B. Fotos der Anlage, Filter oder Pläne. Bis zu 3 Dateien, insgesamt 10 MB.</span></small>
+            <small class="ferr" id="ferr" hidden><span data-en>Files are larger than 10 MB in total. Please remove or shrink a file.</span><span data-fr>Les fichiers dépassent 10 Mo au total. Retirez ou réduisez un fichier.</span><span data-de>Die Dateien sind insgesamt grösser als 10 MB. Bitte eine Datei entfernen oder verkleinern.</span></small>
+          </div>
           <button type="submit"><span data-en>Send request</span><span data-fr>Envoyer la demande</span><span data-de>Anfrage senden</span></button>
           <small><span data-en>* Required. We use your details only to contact you about this request.</span><span data-fr>* Obligatoire. Vos données servent uniquement à vous recontacter.</span><span data-de>* Pflichtfeld. Ihre Angaben dienen nur der Kontaktaufnahme.</span></small>
         </form>
@@ -409,6 +421,18 @@ function setLang(l){
   if(!l && nl.indexOf('fr')===0) l='fr';
   if(!l && nl.indexOf('de')===0) l='de';
   if(l) setLang(l);
+})();
+(function(){
+  var f=document.getElementById('diagform');if(!f)return;
+  var ins=f.querySelectorAll('input[type=file]'),err=document.getElementById('ferr'),MAX=10*1024*1024;
+  function total(){var s=0;ins.forEach(function(i){if(i.files)for(var k=0;k<i.files.length;k++)s+=i.files[k].size});return s}
+  ins.forEach(function(inp,idx){
+    inp.addEventListener('change',function(){
+      if(inp.files&&inp.files.length&&ins[idx+1])ins[idx+1].hidden=false;
+      err.hidden=total()<=MAX;
+    });
+  });
+  f.addEventListener('submit',function(e){if(total()>MAX){e.preventDefault();err.hidden=false;}});
 })();
 </script>
 </body>
