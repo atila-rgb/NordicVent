@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7FA6C9"/>
+      <stop offset="0.55" stop-color="#C9B8C4"/>
+      <stop offset="1" stop-color="#F3C6A0"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.72" cy="0.62" r="0.35">
+      <stop offset="0" stop-color="#FFE3B8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFE3B8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="300" fill="url(#sky)"/>
+  <rect width="800" height="300" fill="url(#sun)"/>
+  <path d="M0 230 L90 170 L160 205 L250 120 L320 175 L400 70 L470 140 L520 110 L600 185 L680 150 L800 210 L800 300 L0 300 Z" fill="#6E8399"/>
+  <path d="M400 70 L428 103 L414 99 L402 112 L388 98 L374 104 Z" fill="#F7F9FB"/>
+  <path d="M250 120 L268 141 L258 139 L248 147 L238 140 Z" fill="#F7F9FB"/>
+  <path d="M520 110 L536 128 L526 126 L516 133 Z" fill="#F7F9FB"/>
+  <path d="M0 260 L110 215 L210 245 L330 195 L440 240 L560 205 L690 245 L800 225 L800 300 L0 300 Z" fill="#43586E"/>
+  <path d="M0 285 L150 255 L300 280 L460 250 L620 282 L800 262 L800 300 L0 300 Z" fill="#1E2B42"/>
+</svg>
