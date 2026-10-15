@@ -77,6 +77,34 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .flag:before{left:5px;top:2px;width:2px;height:8px}
 .flag:after{left:2px;top:5px;width:8px;height:2px}
 
+/* products */
+.lead2{color:var(--grey);max-width:640px;margin:-24px 0 36px}
+.prods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.prod{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.prod .pic{background:#fff;border-bottom:1px solid var(--line);height:210px;display:flex;align-items:center;justify-content:center;padding:18px}
+.prod .pic img{width:100%;height:100%;object-fit:contain}
+.prod .txt{padding:22px 24px 26px}
+.prod small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);font-weight:600;margin-bottom:4px}
+.prod h3{font-size:26px;font-weight:600;letter-spacing:.04em}
+.prod .flow{font-size:17px;margin:2px 0 12px}
+.prod ul{list-style:none;color:var(--grey);font-size:14.5px;display:grid;gap:6px}
+.prod li:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ice);margin:0 10px 2px 0}
+.band{margin-top:28px;border-radius:12px;background:var(--navy);color:#fff;padding:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.band p{color:#C9D6DD;margin-top:6px}
+.band h3{font-size:20px;font-weight:600}
+@media(max-width:720px){.band{grid-template-columns:1fr}}
+.btn.light{background:#fff;color:var(--navy)}
+.dl{display:table;align-items:center;gap:8px;margin-top:24px;font-size:15px;font-weight:500;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--ice);padding-bottom:2px}
+.filters{background:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.chips span.c{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px}
+.diag{margin-top:28px;border-radius:12px;background:#23688C;color:#fff;padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.diag h3{font-size:clamp(22px,3vw,30px);font-weight:600;line-height:1.25}
+.diag p{color:#EAF2F6;margin-top:10px}
+.diag ul{list-style:none;background:#fff;color:var(--navy);border-radius:10px;padding:22px 24px;display:grid;gap:8px;font-size:15px}
+.diag li:before{content:"✓";color:#23688C;font-weight:700;margin-right:10px}
+@media(max-width:820px){.diag{grid-template-columns:1fr}}
+
 [data-fr],[data-de]{display:none}
 body.fr [data-fr],body.de [data-de]{display:revert}
 body.fr [data-en],body.de [data-en]{display:none}
@@ -92,6 +120,8 @@ body.fr [data-en],body.de [data-en]{display:none}
     </a>
     <nav>
       <a class="l" href="#services"><span data-en>Services</span><span data-fr>Services</span><span data-de>Leistungen</span></a>
+      <a class="l" href="#products"><span data-en>Units</span><span data-fr>Monoblocs</span><span data-de>Geräte</span></a>
+      <a class="l" href="#filters"><span data-en>Filters</span><span data-fr>Filtres</span><span data-de>Filter</span></a>
       <a class="l" href="#about"><span data-en>About</span><span data-fr>À propos</span><span data-de>Über uns</span></a>
       <a class="l" href="#contact"><span data-en>Contact</span><span data-fr>Contact</span><span data-de>Kontakt</span></a>
       <div class="lang" role="group" aria-label="Language">
@@ -156,6 +186,120 @@ body.fr [data-en],body.de [data-en]{display:none}
           <p><span data-en>Quality filters and regular service for existing installations, keeping air clean and energy use low.</span><span data-fr>Filtres de qualité et entretien régulier des installations existantes, pour un air sain et une faible consommation d'énergie.</span><span data-de>Qualitätsfilter und regelmässiger Unterhalt bestehender Anlagen, für saubere Luft und einen tiefen Energieverbrauch.</span></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="products" class="filters">
+    <div class="wrap">
+      <div class="eyebrow"><span data-en>Air handling units</span><span data-fr>Monoblocs</span><span data-de>Lüftungsgeräte</span></div>
+      <h2><span data-en>Three series, from homes to large halls.</span><span data-fr>Trois séries, du logement aux grandes halles.</span><span data-de>Drei Baureihen, vom Wohnbau bis zur grossen Halle.</span></h2>
+      <p class="lead2"><span data-en>Eurovent-certified units with high-efficiency heat recovery and EC fans, under the Nordic Vent brand.</span><span data-fr>Monoblocs certifiés Eurovent, avec récupération de chaleur à haut rendement et ventilateurs EC, sous la marque Nordic Vent.</span><span data-de>Eurovent-zertifizierte Geräte mit hocheffizienter Wärmerückgewinnung und EC-Ventilatoren, unter der Marke Nordic Vent.</span></p>
+      <div class="prods">
+        <div class="prod">
+          <div class="pic"><img src="img/abisko.webp" alt="ABISKO ceiling-mounted unit" loading="lazy"></div>
+          <div class="txt">
+            <small><span data-en>Ceiling-mounted</span><span data-fr>Plafonnier</span><span data-de>Deckengerät</span></small>
+            <h3>ABISKO</h3>
+            <p class="flow">200 – 2 400 m³/h</p>
+            <ul>
+              <li><span data-en>Only 440 mm high</span><span data-fr>Seulement 440 mm de hauteur</span><span data-de>Nur 440 mm hoch</span></li>
+              <li><span data-en>Aluminium counterflow exchanger, approx. 83&nbsp;%</span><span data-fr>Échangeur à contre-courant, env. 83&nbsp;%</span><span data-de>Gegenstromtauscher, ca. 83&nbsp;%</span></li>
+              <li><span data-en>Homes, offices, schools</span><span data-fr>Logements, bureaux, écoles</span><span data-de>Wohnungen, Büros, Schulen</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="prod">
+          <div class="pic"><img src="img/sarek.webp" alt="SAREK compact floor-standing unit" loading="lazy"></div>
+          <div class="txt">
+            <small><span data-en>Compact floor-standing</span><span data-fr>Compact au sol</span><span data-de>Kompaktes Standgerät</span></small>
+            <h3>SAREK</h3>
+            <p class="flow">1 000 – 7 000 m³/h</p>
+            <ul>
+              <li><span data-en>Counterflow exchanger, approx. 80&nbsp;%</span><span data-fr>Échangeur à contre-courant, env. 80&nbsp;%</span><span data-de>Gegenstromtauscher, ca. 80&nbsp;%</span></li>
+              <li><span data-en>Eurovent certified, energy class A</span><span data-fr>Certifié Eurovent, classe A</span><span data-de>Eurovent-zertifiziert, Klasse A</span></li>
+              <li><span data-en>Delivered ready to install</span><span data-fr>Livré prêt à poser</span><span data-de>Anschlussfertig geliefert</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="prod">
+          <div class="pic"><img src="img/kebne.webp" alt="KEBNE modular air handling unit" loading="lazy"></div>
+          <div class="txt">
+            <small><span data-en>Modular AHU</span><span data-fr>Monobloc modulaire</span><span data-de>Modulares Gerät</span></small>
+            <h3>KEBNE</h3>
+            <p class="flow"><span data-en>Made to order, 30 000+ m³/h</span><span data-fr>Sur mesure, 30 000+ m³/h</span><span data-de>Massgefertigt, 30 000+ m³/h</span></p>
+            <ul>
+              <li><span data-en>Counterflow plate heat exchanger</span><span data-fr>Échangeur à plaques à contre-courant</span><span data-de>Gegenstrom-Plattentauscher</span></li>
+              <li><span data-en>EC fan arrays, energy class A+</span><span data-fr>Ventilateurs EC en batterie, classe A+</span><span data-de>EC-Ventilatorverbund, Klasse A+</span></li>
+              <li><span data-en>Halls, industry, large buildings</span><span data-fr>Halles, industrie, grands bâtiments</span><span data-de>Hallen, Industrie, Grossbauten</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="band">
+        <div>
+          <h3><span data-en>Every unit is calculated for your project</span><span data-fr>Chaque monobloc est calculé pour votre projet</span><span data-de>Jedes Gerät wird für Ihr Projekt berechnet</span></h3>
+          <p><span data-en>We run a full unit selection for every project: air flows, pressures, efficiency, power, sound and exact dimensions, before you order.</span><span data-fr>Nous faisons une sélection technique complète pour chaque projet : débits, pressions, rendement, puissances, acoustique et dimensions exactes, avant la commande.</span><span data-de>Für jedes Projekt erstellen wir eine vollständige Geräteauslegung: Luftmengen, Drücke, Wirkungsgrad, Leistung, Schall und genaue Masse, vor der Bestellung.</span></p>
+        </div>
+        <a class="btn light" href="#contact"><span data-en>Request a selection</span><span data-fr>Demander une sélection</span><span data-de>Auslegung anfragen</span></a>
+      </div>
+      <a class="dl" href="docs/Nordic_Vent_AHU_Range.pdf" data-en download>↓ Download the brochure (PDF)</a>
+      <a class="dl" href="docs/Nordic_Vent_Gamme_de_monoblocs.pdf" data-fr download>↓ Télécharger la brochure (PDF)</a>
+      <a class="dl" href="docs/Nordic_Vent_Lueftungsgeraete.pdf" data-de download>↓ Broschüre herunterladen (PDF)</a>
+    </div>
+  </section>
+
+  <section id="filters">
+    <div class="wrap">
+      <div class="eyebrow"><span data-en>Filters & maintenance</span><span data-fr>Filtres & maintenance</span><span data-de>Filter & Wartung</span></div>
+      <h2><span data-en>Swedish-made filters and full care of your installation.</span><span data-fr>Filtres de fabrication suédoise et entretien complet de votre installation.</span><span data-de>Filter aus schwedischer Herstellung und komplette Betreuung Ihrer Anlage.</span></h2>
+      <div class="chips">
+        <span class="c"><span data-en>Bag filters</span><span data-fr>Filtres à poches</span><span data-de>Taschenfilter</span></span>
+        <span class="c"><span data-en>Synthetic & glass fibre</span><span data-fr>Synthétique & fibre de verre</span><span data-de>Synthetik & Glasfaser</span></span>
+        <span class="c"><span data-en>Compact filters</span><span data-fr>Filtres compacts</span><span data-de>Kompaktfilter</span></span>
+        <span class="c"><span data-en>Pre-filters</span><span data-fr>Préfiltres</span><span data-de>Vorfilter</span></span>
+        <span class="c">EPA · HEPA · ULPA</span>
+        <span class="c"><span data-en>Activated carbon</span><span data-fr>Charbon actif</span><span data-de>Aktivkohle</span></span>
+        <span class="c"><span data-en>Custom sizes</span><span data-fr>Sur mesure</span><span data-de>Sondermasse</span></span>
+        <span class="c">ISO 16890 · EN 1822</span>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+          <h3><span data-en>Filter replacement & monitoring</span><span data-fr>Remplacement et surveillance</span><span data-de>Filterwechsel & Überwachung</span></h3>
+          <p><span data-en>Planned filter changes and tracking of filter loading, before the pressure drop costs you energy.</span><span data-fr>Changements planifiés et suivi de l'encrassement, avant que la perte de charge ne coûte de l'énergie.</span><span data-de>Geplante Filterwechsel und Überwachung der Verschmutzung, bevor der Druckverlust Energie kostet.</span></p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
+          <h3><span data-en>System cleaning</span><span data-fr>Nettoyage du système</span><span data-de>Anlagenreinigung</span></h3>
+          <p><span data-en>Ducts, casings, heat exchangers, diffusers and grilles.</span><span data-fr>Gaines, caissons, échangeurs, bouches et grilles.</span><span data-de>Kanäle, Gehäuse, Wärmetauscher, Auslässe und Gitter.</span></p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+          <h3><span data-en>Full maintenance</span><span data-fr>Maintenance complète</span><span data-de>Komplette Wartung</span></h3>
+          <p><span data-en>Fans, controls, dampers and checks, with a contract tailored to each installation.</span><span data-fr>Ventilateurs, régulation, volets et contrôles, avec un contrat adapté à chaque installation.</span><span data-de>Ventilatoren, Regelung, Klappen und Kontrollen, mit einem Vertrag für jede Anlage.</span></p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          <h3><span data-en>Energy & air quality</span><span data-fr>Énergie & qualité d'air</span><span data-de>Energie & Luftqualität</span></h3>
+          <p><span data-en>Optimisation of air flows, filters and controls: less energy, better air.</span><span data-fr>Optimisation des débits, des filtres et de la régulation : moins d'énergie, un meilleur air.</span><span data-de>Optimierung von Luftmengen, Filtern und Regelung: weniger Energie, bessere Luft.</span></p>
+        </div>
+      </div>
+      <div class="diag">
+        <div>
+          <h3><span data-en>Free on-site diagnosis of your whole installation</span><span data-fr>Diagnostic gratuit sur place de toute votre installation</span><span data-de>Kostenlose Diagnose Ihrer ganzen Anlage vor Ort</span></h3>
+          <p><span data-en>Free of charge and with no obligation. You get a clear report and a proposal tailored to your system.</span><span data-fr>Sans frais et sans engagement. Vous recevez un rapport clair et une proposition adaptée à votre système.</span><span data-de>Kostenlos und unverbindlich. Sie erhalten einen klaren Bericht und ein Angebot für Ihr System.</span></p>
+          <a class="btn light" style="margin-top:22px" href="mailto:info@nordic-vent.ch?subject=Diagnostic%20gratuit%20%2F%20Free%20diagnosis"><span data-en>Book a free diagnosis</span><span data-fr>Réserver un diagnostic</span><span data-de>Diagnose buchen</span></a>
+        </div>
+        <ul>
+          <li><span data-en>Filter condition and class</span><span data-fr>État et classe des filtres</span><span data-de>Zustand und Klasse der Filter</span></li>
+          <li><span data-en>Air flows and pressure drops</span><span data-fr>Débits et pertes de charge</span><span data-de>Luftmengen und Druckverluste</span></li>
+          <li><span data-en>Cleanliness of ducts and casings</span><span data-fr>Propreté des gaines et caissons</span><span data-de>Sauberkeit von Kanälen und Gehäusen</span></li>
+          <li><span data-en>Fans, controls, energy use</span><span data-fr>Ventilateurs, régulation, consommation</span><span data-de>Ventilatoren, Regelung, Verbrauch</span></li>
+        </ul>
+      </div>
+      <a class="dl" href="docs/Nordic_Vent_Filters_and_Maintenance.pdf" data-en download>↓ Download the brochure (PDF)</a>
+      <a class="dl" href="docs/Nordic_Vent_Filtres_et_maintenance.pdf" data-fr download>↓ Télécharger la brochure (PDF)</a>
+      <a class="dl" href="docs/Nordic_Vent_Filter_und_Wartung.pdf" data-de download>↓ Broschüre herunterladen (PDF)</a>
     </div>
   </section>
 
