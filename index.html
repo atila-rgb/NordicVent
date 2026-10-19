@@ -125,6 +125,59 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .diag li:before{content:"✓";color:#A9F0CF;font-weight:700;margin-right:10px}
 @media(max-width:820px){.diag{grid-template-columns:1fr}}
 
+/* guide */
+.guide{background:var(--navy);color:#fff}
+.guide .eyebrow{color:#9CC8E2}
+.gtop{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:56px;align-items:start}
+@media(max-width:820px){.gtop{grid-template-columns:1fr;gap:32px}}
+.gcover{max-width:300px}
+@media(max-width:820px){.gcover{max-width:220px}}
+.gcover img{display:block;width:100%;height:auto;border-radius:4px;box-shadow:0 22px 50px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);transform:rotate(-2deg)}
+.guide h2.gtitle{font-size:clamp(30px,4.6vw,44px);font-weight:600;margin:0 0 6px;max-width:none;letter-spacing:-.01em}
+.gsub{color:#C9D6E0;font-size:17px;margin-bottom:18px}
+.glead{color:#C9D6E0;max-width:600px;margin-bottom:26px}
+.gchap small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9CC8E2;font-weight:600;margin-bottom:10px}
+.gchap ol{counter-reset:c;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;font-size:14.5px;color:#E4ECF2;margin-bottom:28px}
+@media(max-width:560px){.gchap ol{grid-template-columns:1fr}}
+.gchap li{counter-increment:c;display:flex;gap:10px;border-top:1px solid rgba(255,255,255,.12);padding-top:8px}
+.gchap li:before{content:counter(c);color:#9CC8E2;font-weight:600;min-width:14px;font-variant-numeric:tabular-nums}
+.gdlrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.galso{font-size:13.5px;color:#9FB2C3}
+@media(max-width:520px){.galso{flex-basis:100%}}
+.galso a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(156,200,226,.6)}
+.gpeek{margin-top:64px;background:#fff;color:var(--navy);border-radius:12px;padding:30px 28px}
+@media(max-width:520px){.gpeek{padding:24px 18px}}
+.ghead{margin-bottom:12px}
+.ghead h3{font-size:20px;font-weight:600}
+.ghead p{color:var(--grey);font-size:14.5px}
+.gp{border-top:1px solid var(--line)}
+.gp summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;font-weight:600;font-size:16px}
+.gp summary::-webkit-details-marker{display:none}
+.gp summary:after{content:"+";font-weight:400;font-size:22px;line-height:1;color:var(--ice)}
+.gp[open] summary:after{content:"−"}
+.gp summary:focus-visible{outline:2px solid var(--ice);outline-offset:4px;border-radius:4px}
+.gpt{flex:1}
+.gpn{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--grey);background:var(--soft);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.gpb{padding:0 0 22px}
+.gsigns{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(max-width:720px){.gsigns{grid-template-columns:1fr}}
+.gsigns li{background:var(--soft);border-radius:8px;padding:14px 16px;display:grid;gap:4px}
+.gsigns b{font-weight:600;font-size:15px}
+.gsigns span{color:#3b475a;font-size:14px}
+.gsigns i{font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ice);font-weight:600;margin-right:4px}
+.gtasks{list-style:none;display:grid;gap:10px;font-size:15px;color:#3b475a;max-width:760px}
+.gtasks li{padding-left:18px;position:relative}
+.gtasks li:before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--ice)}
+.gtasks b{color:var(--navy);font-weight:600}
+.gcheck{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+@media(max-width:720px){.gcheck{grid-template-columns:1fr}}
+.gcheck label{display:flex;gap:10px;align-items:flex-start;font-size:15px;cursor:pointer;padding:6px 0}
+.gcheck input{width:18px;height:18px;margin-top:3px;accent-color:var(--navy);flex:none}
+.gcheck input:checked+span{color:var(--grey);text-decoration:line-through}
+.gcount{grid-column:1/-1;font-size:13.5px;color:var(--grey);margin-top:6px;font-variant-numeric:tabular-nums}
+.gcta{margin-top:26px;text-align:center;color:#C9D6E0}
+.gcta a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid var(--ice);margin-left:6px}
+
 [data-fr],[data-de]{display:none}
 body.fr [data-fr],body.de [data-de]{display:revert}
 body.fr [data-en],body.de [data-en]{display:none}
@@ -142,6 +195,7 @@ body.fr [data-en],body.de [data-en]{display:none}
       <a class="l" href="#services"><span data-en>Services</span><span data-fr>Services</span><span data-de>Leistungen</span></a>
       <a class="l" href="#products"><span data-en>Units</span><span data-fr>Monoblocs</span><span data-de>Geräte</span></a>
       <a class="l" href="#filters"><span data-en>Filters</span><span data-fr>Filtres</span><span data-de>Filter</span></a>
+      <a class="l" href="#guide"><span data-en>Guide</span><span data-fr>Guide</span><span data-de>Ratgeber</span></a>
       <a class="l" href="#about"><span data-en>About</span><span data-fr>À propos</span><span data-de>Über uns</span></a>
       <a class="l" href="#contact"><span data-en>Contact</span><span data-fr>Contact</span><span data-de>Kontakt</span></a>
       <div class="lang" role="group" aria-label="Language">
@@ -364,6 +418,47 @@ body.fr [data-en],body.de [data-en]{display:none}
     </div>
   </section>
 
+<section id="guide" class="guide">
+<div class="wrap">
+<div class="gtop">
+<div class="gcover"><div data-en><img src="img/guide-cover-en.webp" width="480" height="679" alt="Cover of the guide – Breathe better" loading="lazy"></div><div data-fr><img src="img/guide-cover-fr.webp" width="480" height="679" alt="Couverture du guide – Respirer mieux" loading="lazy"></div><div data-de><img src="img/guide-cover-de.webp" width="480" height="679" alt="Titelseite des Ratgebers – Besser atmen" loading="lazy"></div></div>
+<div class="gtext">
+<div class="eyebrow"><span data-en>Free guide · 12 pages · PDF</span><span data-fr>Guide gratuit · 12 pages · PDF</span><span data-de>Gratis-Ratgeber · 12 Seiten · PDF</span></div>
+<h2 class="gtitle"><span data-en>Breathe better</span><span data-fr>Respirer mieux</span><span data-de>Besser atmen</span></h2>
+<p class="gsub"><span data-en>The plain-language ventilation guide for building owners and property managers</span><span data-fr>Le guide de la ventilation en langage clair pour les propriétaires et les gérances</span><span data-de>Der Lüftungsratgeber in verständlicher Sprache für Eigentümer und Verwaltungen</span></p>
+<p class="glead"><span data-en>Written for owners, condominiums and property managers who aren’t ventilation engineers. In about thirty minutes you learn how your system works, how to spot problems early and how to compare quotes without being oversold.</span><span data-fr>Écrit pour les propriétaires, PPE et gérances qui ne sont pas ingénieurs en ventilation. En une trentaine de minutes, vous comprenez votre installation, repérez les problèmes à temps et comparez les offres sans vous laisser vendre plus que nécessaire.</span><span data-de>Geschrieben für Eigentümer, Stockwerkeigentümer und Verwaltungen, die keine Lüftungsingenieure sind. In rund dreissig Minuten verstehen Sie Ihre Anlage, erkennen Probleme früh und vergleichen Offerten, ohne zu viel zu kaufen.</span></p>
+<div class="gchap"><small><span data-en>Inside the guide</span><span data-fr>Dans le guide</span><span data-de>Im Ratgeber</span></small>
+<div data-en><ol><li>Why ventilation matters</li><li>The four main types of ventilation</li><li>Inside a ventilation system</li><li>Signs your ventilation isn’t working properly</li><li>Maintenance: what you can do and what needs a professional</li><li>Energy and running costs</li><li>Renovating or installing a new system</li><li>Choosing a contractor and reading a quote</li></ol></div>
+<div data-fr><ol><li>Pourquoi la ventilation est importante</li><li>Les quatre grands types de ventilation</li><li>À l’intérieur d’une installation de ventilation</li><li>Les signes d’une ventilation qui fonctionne mal</li><li>Entretien : ce que vous pouvez faire et ce qui revient au professionnel</li><li>Énergie et coûts d’exploitation</li><li>Rénover ou installer un nouveau système</li><li>Choisir une entreprise et lire une offre</li></ol></div>
+<div data-de><ol><li>Warum Lüftung wichtig ist</li><li>Die vier wichtigsten Lüftungsarten</li><li>Das Innenleben einer Lüftungsanlage</li><li>Anzeichen, dass die Lüftung nicht richtig funktioniert</li><li>Unterhalt: was Sie selbst tun können und was Sache der Fachleute ist</li><li>Energie und Betriebskosten</li><li>Sanieren oder eine neue Anlage einbauen</li><li>Eine Firma wählen und eine Offerte lesen</li></ol></div>
+</div>
+<div class="gdl">
+<div data-en><div class="gdlrow"><a class="btn light" href="docs/Breathe-better-Ventilation-guide-Nordic-Vent-EN.pdf" download>↓ Download the guide (PDF)</a><span class="galso">Also in: <a href="docs/Respirer-mieux-Guide-ventilation-Nordic-Vent-FR.pdf" download>Français</a> · <a href="docs/Besser-atmen-Lueftungsratgeber-Nordic-Vent-DE.pdf" download>Deutsch</a></span></div></div>
+<div data-fr><div class="gdlrow"><a class="btn light" href="docs/Respirer-mieux-Guide-ventilation-Nordic-Vent-FR.pdf" download>↓ Télécharger le guide (PDF)</a><span class="galso">Aussi en: <a href="docs/Breathe-better-Ventilation-guide-Nordic-Vent-EN.pdf" download>English</a> · <a href="docs/Besser-atmen-Lueftungsratgeber-Nordic-Vent-DE.pdf" download>Deutsch</a></span></div></div>
+<div data-de><div class="gdlrow"><a class="btn light" href="docs/Besser-atmen-Lueftungsratgeber-Nordic-Vent-DE.pdf" download>↓ Ratgeber herunterladen (PDF)</a><span class="galso">Auch auf: <a href="docs/Breathe-better-Ventilation-guide-Nordic-Vent-EN.pdf" download>English</a> · <a href="docs/Respirer-mieux-Guide-ventilation-Nordic-Vent-FR.pdf" download>Français</a></span></div></div>
+</div></div></div>
+<div class="gpeek">
+<div class="ghead"><h3><span data-en>Read a preview</span><span data-fr>Un aperçu à lire ici</span><span data-de>Hier reinlesen</span></h3><p><span data-en>Three parts of the guide, in short.</span><span data-fr>Trois parties du guide, en bref.</span><span data-de>Drei Teile des Ratgebers, kurz gefasst.</span></p></div>
+<details class="gp" open><summary><span class="gpt"><span data-en>Warning signs to watch for</span><span data-fr>Les signes d’alerte à surveiller</span><span data-de>Warnzeichen, auf die Sie achten sollten</span></span><span class="gpn"><span data-en>6 signs</span><span data-fr>6 signes</span><span data-de>6 Zeichen</span></span></summary><div class="gpb">
+<div data-en><ul class="gsigns"><li><b>Condensation on the windows every morning</b><span><i>First step</i> Check the unit runs at normal speed; clean the extract valves</span></li><li><b>Black mould spots in corners or the bathroom</b><span><i>First step</i> Treat the mould, then have the airflows measured</span></li><li><b>Stuffy air, headaches, tiredness</b><span><i>First step</i> Check the filters; measure CO<sub>2</sub> overnight in the bedroom</span></li><li><b>Musty or stale smell</b><span><i>First step</i> Change the filters; ask for an inspection if the smell persists</span></li><li><b>Whistling, humming, vibration</b><span><i>First step</i> Change the filters; don’t adjust the valves yourself</span></li><li><b>Energy bill rising for no clear reason</b><span><i>First step</i> Check settings and schedules; book a service</span></li></ul></div>
+<div data-fr><ul class="gsigns"><li><b>Condensation sur les fenêtres chaque matin</b><span><i>À faire</i> Vérifier que l’appareil tourne en vitesse normale ; nettoyer les bouches d’extraction</span></li><li><b>Taches noires de moisissure dans les angles ou la salle de bains</b><span><i>À faire</i> Traiter la moisissure, puis faire mesurer les débits</span></li><li><b>Air confiné, maux de tête, fatigue</b><span><i>À faire</i> Contrôler les filtres ; mesurer le CO<sub>2</sub> une nuit dans la chambre</span></li><li><b>Odeur de moisi ou de renfermé</b><span><i>À faire</i> Changer les filtres ; demander une inspection si l’odeur persiste</span></li><li><b>Sifflements, bourdonnements, vibrations</b><span><i>À faire</i> Changer les filtres ; ne pas régler les bouches soi-même</span></li><li><b>Facture d’énergie en hausse sans raison claire</b><span><i>À faire</i> Contrôler réglages et horaires ; demander un service</span></li></ul></div>
+<div data-de><ul class="gsigns"><li><b>Jeden Morgen Kondenswasser an den Fenstern</b><span><i>Zuerst</i> Prüfen, ob das Gerät auf normaler Stufe läuft; Abluftventile reinigen</span></li><li><b>Schwarze Schimmelflecken in Ecken oder im Bad</b><span><i>Zuerst</i> Schimmel behandeln, dann Luftmengen messen lassen</span></li><li><b>Stickige Luft, Kopfschmerzen, Müdigkeit</b><span><i>Zuerst</i> Filter prüfen; CO<sub>2</sub> über Nacht im Schlafzimmer messen</span></li><li><b>Muffiger oder abgestandener Geruch</b><span><i>Zuerst</i> Filter wechseln; bei anhaltendem Geruch Kontrolle verlangen</span></li><li><b>Pfeifen, Brummen, Vibrationen</b><span><i>Zuerst</i> Filter wechseln; Ventile nicht selbst verstellen</span></li><li><b>Energierechnung steigt ohne klaren Grund</b><span><i>Zuerst</i> Einstellungen und Zeitprogramme prüfen; Service bestellen</span></li></ul></div>
+</div></details>
+<details class="gp"><summary><span class="gpt"><span data-en>What you can do yourself</span><span data-fr>Ce que vous pouvez faire vous-même</span><span data-de>Was Sie selbst tun können</span></span><span class="gpn"><span data-en>5 tasks</span><span data-fr>5 gestes</span><span data-de>5 Arbeiten</span></span></summary><div class="gpb">
+<div data-en><ul class="gtasks"><li><b>Change the filters.</b> Usually every 6 to 12 months; more often in town or near a busy road. Buy exactly the size and class specified, write the date on the frame and reset the alarm.</li><li><b>Clean the extract valves.</b> Take them off, wash them in warm soapy water, dry them and refit them in exactly the same position. Mark the setting with a pencil first.</li><li><b>Clean the cooker hood grease filter.</b> Once a month, or in the dishwasher.</li><li><b>Check the outdoor grilles.</b> Remove leaves, snow, cobwebs and nests.</li><li><b>Listen and look.</b> A new noise, an alarm on the display or water under the unit are reasons to call.</li></ul></div>
+<div data-fr><ul class="gtasks"><li><b>Changer les filtres.</b> En général tous les 6 à 12 mois ; plus souvent en ville ou près d’une route fréquentée. Achetez exactement la dimension et la classe indiquées, notez la date sur le cadre et réinitialisez l’alarme.</li><li><b>Nettoyer les bouches d’extraction.</b> Démontez-les, lavez-les à l’eau chaude savonneuse, séchez et remontez-les exactement dans la même position. Marquez le réglage au crayon avant.</li><li><b>Nettoyer le filtre à graisse de la hotte.</b> Une fois par mois, ou au lave-vaisselle.</li><li><b>Contrôler les grilles extérieures.</b> Retirez feuilles, neige, toiles d’araignée et nids.</li><li><b>Écouter et regarder.</b> Un nouveau bruit, une alarme à l’écran ou de l’eau sous l’appareil justifient un appel.</li></ul></div>
+<div data-de><ul class="gtasks"><li><b>Filter wechseln.</b> In der Regel alle 6 bis 12 Monate; in der Stadt oder an einer stark befahrenen Strasse öfter. Kaufen Sie genau die angegebene Grösse und Klasse, schreiben Sie das Datum auf den Rahmen und setzen Sie den Alarm zurück.</li><li><b>Abluftventile reinigen.</b> Abnehmen, in warmem Seifenwasser waschen, trocknen und genau in derselben Stellung wieder einsetzen. Die Einstellung vorher mit Bleistift markieren.</li><li><b>Fettfilter der Dunstabzugshaube reinigen.</b> Einmal im Monat, oder in der Geschirrspülmaschine.</li><li><b>Aussengitter kontrollieren.</b> Laub, Schnee, Spinnweben und Nester entfernen.</li><li><b>Hinhören und hinschauen.</b> Ein neues Geräusch, ein Alarm auf dem Display oder Wasser unter dem Gerät sind ein Grund anzurufen.</li></ul></div>
+</div></details>
+<details class="gp"><summary><span class="gpt"><span data-en>Your annual checklist</span><span data-fr>Votre check-list annuelle</span><span data-de>Ihre jährliche Checkliste</span></span><span class="gpn"><span data-en>10 points</span><span data-fr>10 points</span><span data-de>10 Punkte</span></span></summary><div class="gpb">
+<div data-en><div class="gcheck"><label><input type="checkbox" id="gc-en-0"> <span>The unit is running and shows no alarms</span></label><label><input type="checkbox" id="gc-en-1"> <span>Filters changed within the last 12 months, date noted</span></label><label><input type="checkbox" id="gc-en-2"> <span>Kitchen, bathroom and WC extract valves are clean</span></label><label><input type="checkbox" id="gc-en-3"> <span>Outdoor grilles are clear</span></label><label><input type="checkbox" id="gc-en-4"> <span>No condensation on the windows on a normal morning</span></label><label><input type="checkbox" id="gc-en-5"> <span>No mould in corners or in the bathroom</span></label><label><input type="checkbox" id="gc-en-6"> <span>No new noises from the unit or the valves</span></label><label><input type="checkbox" id="gc-en-7"> <span>Supply air is not cold in winter</span></label><label><input type="checkbox" id="gc-en-8"> <span>Cooker hood filter clean and boost working</span></label><label><input type="checkbox" id="gc-en-9"> <span>Last professional service less than 2 years ago</span></label><p class="gcount"><b>0</b>/10 checked</p></div></div>
+<div data-fr><div class="gcheck"><label><input type="checkbox" id="gc-fr-0"> <span>L’appareil fonctionne et n’affiche aucune alarme</span></label><label><input type="checkbox" id="gc-fr-1"> <span>Filtres changés depuis moins de 12 mois, date notée</span></label><label><input type="checkbox" id="gc-fr-2"> <span>Bouches d’extraction de la cuisine, de la salle de bains et des WC propres</span></label><label><input type="checkbox" id="gc-fr-3"> <span>Grilles extérieures dégagées</span></label><label><input type="checkbox" id="gc-fr-4"> <span>Pas de condensation sur les fenêtres un matin normal</span></label><label><input type="checkbox" id="gc-fr-5"> <span>Pas de moisissure dans les angles ni dans la salle de bains</span></label><label><input type="checkbox" id="gc-fr-6"> <span>Aucun nouveau bruit de l’appareil ou des bouches</span></label><label><input type="checkbox" id="gc-fr-7"> <span>L’air pulsé n’est pas froid en hiver</span></label><label><input type="checkbox" id="gc-fr-8"> <span>Filtre de la hotte propre et boost fonctionnel</span></label><label><input type="checkbox" id="gc-fr-9"> <span>Dernier service professionnel il y a moins de 2 ans</span></label><p class="gcount"><b>0</b>/10 cochés</p></div></div>
+<div data-de><div class="gcheck"><label><input type="checkbox" id="gc-de-0"> <span>Das Gerät läuft und zeigt keinen Alarm</span></label><label><input type="checkbox" id="gc-de-1"> <span>Filter vor weniger als 12 Monaten gewechselt, Datum notiert</span></label><label><input type="checkbox" id="gc-de-2"> <span>Abluftventile in Küche, Bad und WC sauber</span></label><label><input type="checkbox" id="gc-de-3"> <span>Aussengitter frei</span></label><label><input type="checkbox" id="gc-de-4"> <span>Kein Kondenswasser an den Fenstern an einem normalen Morgen</span></label><label><input type="checkbox" id="gc-de-5"> <span>Kein Schimmel in den Ecken oder im Bad</span></label><label><input type="checkbox" id="gc-de-6"> <span>Keine neuen Geräusche von Gerät oder Ventilen</span></label><label><input type="checkbox" id="gc-de-7"> <span>Die Zuluft ist im Winter nicht kalt</span></label><label><input type="checkbox" id="gc-de-8"> <span>Filter der Dunstabzugshaube sauber und Boost funktioniert</span></label><label><input type="checkbox" id="gc-de-9"> <span>Letzter Fachservice vor weniger als 2 Jahren</span></label><p class="gcount"><b>0</b>/10 abgehakt</p></div></div>
+</div></details>
+</div>
+<p class="gcta"><span data-en>Noticed two or more of these signs?</span><span data-fr>Vous reconnaissez au moins deux de ces signes ?</span><span data-de>Zwei oder mehr dieser Zeichen erkannt?</span> <a href="#diagnostic"><span data-en>Book a free diagnosis</span><span data-fr>Demander un diagnostic gratuit</span><span data-de>Gratis-Diagnose anfragen</span> →</a></p>
+</div>
+</section>
+
   <section id="about" class="about">
     <div class="wrap split">
       <div>
@@ -433,6 +528,13 @@ function setLang(l){
     });
   });
   f.addEventListener('submit',function(e){if(total()>MAX){e.preventDefault();err.hidden=false;}});
+})();
+
+(function(){
+  document.querySelectorAll('.gcheck').forEach(function(box){
+    var out=box.querySelector('.gcount b');
+    box.addEventListener('change',function(){out.textContent=box.querySelectorAll('input:checked').length;});
+  });
 })();
 </script>
 </body>
